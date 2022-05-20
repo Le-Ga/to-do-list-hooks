@@ -1,0 +1,156 @@
+@import './normolize.scss';
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+// font-family: 'Comfortaa', cursive;
+
+body {
+   font-family: 'Comfortaa', cursive;
+}
+
+.wrapper {}
+
+.column {
+   display       : flex;
+   flex-direction: column;
+   margin        : 0 auto;
+   width         : 100%;
+
+   .btn {
+      font-size       : 24px;
+      padding         : 5px 15px;
+      align-self      : center;
+      border-radius   : 10px;
+      background-color: #a963ff;
+      color           : #ffffff;
+   }
+}
+
+.container {
+   display       : flex;
+   flex-direction: column;
+   align-items   : center;
+
+   img {
+      margin: 20px 0 0 0;
+
+      @media (max-width: 768px) {
+         width: 250px;
+      }
+   }
+
+   .header {
+      font-size: 55px;
+      margin   : 40px 0 0 0;
+
+      @media (max-width: 500px) {
+         font-size: 40px;
+      }
+   }
+}
+
+.body-row {
+   display        : flex;
+   justify-content: space-around;
+   width          : 100%;
+
+   @media (max-width: 500px) {
+      display       : flex;
+      flex-direction: column;
+   }
+
+   .column-head {
+
+      form {
+         display       : flex;
+         flex-direction: column;
+         align-self    : center;
+      }
+
+      input {
+         display      : block;
+         border       : 2px solid hsla(0, 0%, 0%, 0.3);
+         border-radius: 10px;
+         font-size    : 24px;
+         padding      : 5px 10px;
+         margin       : 20px 0 0 0;
+      }
+
+      .btn-add {
+         align-self: center;
+         margin    : 20px 0 0 0;
+      }
+   }
+
+   .column-list {
+      display       : flex;
+      flex-direction: column;
+      align-items   : center;
+
+      .to-do-list {
+
+         li {
+            font-size: 28px;
+            margin   : 15px 0 0 0;
+            position : relative;
+            padding  : 0 0 0 35px;
+            cursor   : pointer;
+
+            @media (max-width: 500px) {
+               font-size: 20px;
+               padding  : 0 10px 0 50px;
+               max-width: 320px;
+            }
+
+            &:first-child {
+               margin: 0;
+
+               @media (max-width: 500px) {
+                  margin: 15px 0 0 0;
+               }
+            }
+
+            &::before {
+               position  : absolute;
+               content   : '';
+               width     : 30px;
+               height    : 30px;
+               background: url('../public/img/check-circle copy.svg');
+               top       : -2px;
+               left      : 0;
+               padding   : 0 0 0 10px;
+
+               @media (max-width: 500px) {
+                  position: absolute;
+                  top     : -5px;
+                  left    : 0;
+                  margin  : 0 10px 0 10px;
+               }
+            }
+         }
+      }
+
+      .btn-clear {
+         margin: 15px 0 15px 0;
+      }
+   }
+}
+
+.crossed {
+   text-decoration: line-through;
+
+   &::after {
+      position  : absolute;
+      content   : '';
+      width     : 30px;
+      height    : 30px;
+      top       : -2px;
+      left      : 0;
+      background: url('../public/img/check-circle.svg');
+
+      @media (max-width: 500px) {
+         position: absolute;
+         top     : -5px;
+         left    : 0;
+         margin  : 0 10px 0 10px;
+      }
+   }
+}
